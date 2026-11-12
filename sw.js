@@ -1,8 +1,10 @@
+// دليلك الصحي | تطوير: Eslam Amin
 // رقم الإصدار: غيّره عند أي تعديل ليتحدث الكاش
-const CACHE_VERSION = 'v1';
+const CACHE_VERSION = 'v3';
 const CACHE = 'health-pwa-' + CACHE_VERSION;
 const FILES = ['./','./index.html','./style.css','./app.js','./data.js','./manifest.json',
-  './icons/icon-192.svg','./icons/icon-512.svg','./icons/icon-maskable.svg'];
+  './icons/icon-192.svg','./icons/icon-512.svg','./icons/icon-maskable.svg',
+  './icons/icon-192.png','./icons/icon-512.png','./icons/icon-maskable.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES)).then(() => self.skipWaiting()));

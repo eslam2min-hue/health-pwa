@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!-- دليلك الصحي | تطوير: Eslam Amin -->
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>دليلك الصحي: السكري والضغط | Eslam Amin</title>
+<meta name="author" content="Eslam Amin">
+<meta name="description" content="أسئلة وأجوبة مبسطة عن السكري وارتفاع ضغط الدم">
+<meta name="theme-color" content="#14606b" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f1a1c" media="(prefers-color-scheme: dark)">
+<link rel="manifest" href="./manifest.json">
+<link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./icons/icon-192.svg">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top">
+  <h1 id="title">دليلك الصحي</h1>
+  <p class="by">تطوير: <bdi>Eslam Amin</bdi></p>
+  <button id="installBtn" class="chip" type="button" hidden>تثبيت التطبيق</button>
+  <button id="helpBtn" class="chip" type="button">إضافة للشاشة الرئيسية</button>
+</header>
+
+<main>
+  <!-- الصفحة الرئيسية -->
+  <section id="home">
+    <p class="lead">اختر الموضوع الذي تريد معرفة المزيد عنه:</p>
+    <div id="cards" class="cards"></div>
+    <p class="credit">تطبيق من تطوير <bdi>Eslam Amin</bdi><br>© 2026 جميع الحقوق محفوظة</p>
+  </section>
+
+  <!-- صفحة المرض -->
+  <section id="disease" hidden>
+    <button id="backBtn" class="back" type="button">‹ رجوع</button>
+    <h2 id="dName"></h2>
+    <label class="search">
+      <span class="sr">بحث في الأسئلة</span>
+      <input id="q" type="search" placeholder="ابحث في الأسئلة…" autocomplete="off">
+    </label>
+    <p id="count" class="count" aria-live="polite"></p>
+    <div id="list" class="list"></div>
+    <p id="empty" class="empty" hidden>لا توجد نتائج. جرّب كلمة أخرى.</p>
+  </section>
+</main>
+
+<footer class="note" role="note">المعلومات للتوعية فقط ولا تغني عن استشارة الطبيب<small>تطوير: <bdi>Eslam Amin</bdi></small></footer>
+
+<dialog id="dlg">
+  <h3>إضافة التطبيق للشاشة الرئيسية</h3>
+  <p><b>أندرويد (Chrome):</b> القائمة ⋮ ثم «تثبيت التطبيق» أو «Add to Home screen».</p>
+  <p><b>آيفون (Safari):</b> زر المشاركة ⬆ ثم «إضافة إلى الشاشة الرئيسية».</p>
+  <p class="about">عن التطبيق: تطوير <bdi>Eslam Amin</bdi> © 2026</p>
+  <button id="closeDlg" class="chip" type="button">حسنًا</button>
+</dialog>
+
+<script src="./data.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
