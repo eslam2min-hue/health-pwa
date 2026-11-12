@@ -1,0 +1,52 @@
+/* المتغيرات: فاتح / داكن */
+:root{
+  --bg:#f5f7f6; --card:#fff; --ink:#16282b; --mute:#52676a; --line:#d5dfdd;
+  --dm:#0f5f8c; --htn:#a8382f; --accent:var(--dm); --warn:#fff4d6; --warn-ink:#5c4400;
+  --font:"Noto Naskh Arabic","Noto Sans Arabic","Segoe UI",Tahoma,"Geeza Pro",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0f1a1c;--card:#172628;--ink:#e8f0ef;--mute:#9db3b5;--line:#2a3e41;
+    --dm:#6bb8e8;--htn:#f08a80;--warn:#3a3012;--warn-ink:#f3dd9a}
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.9 var(--font);
+  padding:env(safe-area-inset-top) env(safe-area-inset-right) 76px env(safe-area-inset-left)}
+.top{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;padding:1rem 1rem .5rem}
+.top h1{margin:0;font-size:1.5rem;flex:1 1 100%}
+main{max-width:46rem;margin:0 auto;padding:0 1rem}
+.lead{color:var(--mute);margin:.5rem 0 1rem}
+.chip,.back{min-height:44px;padding:.4rem 1rem;border:1.5px solid var(--line);border-radius:999px;
+  background:var(--card);color:var(--ink);font:inherit;font-size:.9rem;cursor:pointer}
+.back{border:0;background:none;color:var(--accent);font-weight:700;padding-inline:.2rem}
+/* بطاقتا الاختيار: شريط لوني عريض يحدد المرض */
+.cards{display:grid;gap:1rem}
+.card{display:block;width:100%;text-align:right;min-height:150px;padding:1.2rem 1.3rem;
+  background:var(--card);color:var(--ink);font:inherit;cursor:pointer;
+  border:1.5px solid var(--line);border-inline-start:12px solid var(--c);border-radius:6px 22px 22px 6px}
+.card b{display:block;font-size:1.7rem;color:var(--c);line-height:1.4}
+.card small{display:block;color:var(--mute);direction:ltr;text-align:right;font-size:.95rem}
+.card span{display:block;margin-top:.5rem}
+h2{margin:.2rem 0 .8rem;font-size:1.6rem;color:var(--accent)}
+.search input{width:100%;min-height:48px;padding:.5rem 1rem;font:inherit;color:var(--ink);
+  background:var(--card);border:1.5px solid var(--line);border-radius:12px}
+.count{color:var(--mute);font-size:.9rem;margin:.4rem 0}
+.list{display:grid;gap:.6rem}
+.item{background:var(--card);border:1.5px solid var(--line);border-radius:12px;overflow:hidden}
+.item button{display:flex;justify-content:space-between;align-items:center;gap:.8rem;width:100%;
+  min-height:56px;padding:.6rem 1rem;background:none;border:0;color:var(--ink);
+  font:inherit;font-weight:700;text-align:right;cursor:pointer;line-height:1.7}
+.item button::after{content:"+";font-size:1.5rem;color:var(--accent);flex:none}
+.item button[aria-expanded=true]::after{content:"−"}
+.ans{padding:0 1rem 1rem;margin:0;color:var(--ink)}
+.empty{text-align:center;color:var(--mute)}
+.note{position:fixed;inset:auto 0 0 0;padding:.6rem 1rem calc(.6rem + env(safe-area-inset-bottom));
+  background:var(--warn);color:var(--warn-ink);text-align:center;font-size:.9rem;line-height:1.6;
+  border-top:1px solid var(--line)}
+dialog{max-width:26rem;border:1.5px solid var(--line);border-radius:16px;background:var(--card);color:var(--ink);font:inherit}
+dialog::backdrop{background:#0008}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (min-width:640px){.cards{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:no-preference){.ans{animation:in .18s ease-out}
+  @keyframes in{from{opacity:0}to{opacity:1}}}
